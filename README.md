@@ -9,6 +9,12 @@
 [![Latest stable](https://img.shields.io/packagist/v/contributte/nebankovni-registr-cz.svg?style=flat-square)](https://packagist.org/packages/contributte/nebankovni-registr-cz)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
 
+## Credits
+
+The development is sponsored by [Asisteam](https://www.asisteam.cz/). Thank you guys! :+1:
+
+<img src="https://www.asisteam.cz/img/logo.svg" width="100" alt="Asisteam" title="Asisteam"/>
+
 ## Discussion / Help
 
 [![Join the chat](https://img.shields.io/gitter/room/contributte/contributte.svg?style=flat-square)](http://bit.ly/ctteg)
