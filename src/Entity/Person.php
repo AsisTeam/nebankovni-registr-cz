@@ -2,6 +2,10 @@
 
 namespace Contributte\NRCZ\Entity;
 
+use Contributte\NRCZ\Enum\Education;
+use Contributte\NRCZ\Enum\MaritalStatus;
+use Contributte\NRCZ\Exception\Logical\InvalidArgumentException;
+
 final class Person
 {
 
@@ -17,14 +21,53 @@ final class Person
 	/** @var string|null */
 	private $bankAccount;
 
+	/** @var string|null */
+	private $maritalStatus;
+
+	/** @var string|null */
+	private $education;
+
+	/** @var int|null */
+	private $children;
+
 	/** @var string[] */
 	private $phones = [];
 
 	/** @var string[] */
 	private $emails = [];
 
-	/** @var string|null */
-	private $idCardNumber;
+	/** @var string[] */
+	private $ipAddresses = [];
+
+	/** @var Address|null */
+	private $address;
+
+	/** @var Address|null */
+	private $deliveryAddress;
+
+	/** @var IdentityCard|null */
+	private $identityCard;
+
+	/** @var Passport|null */
+	private $passport;
+
+	/** @var DriverLicense|null */
+	private $driverLicense;
+
+	/** @var Loan|null */
+	private $loan;
+
+	/** @var Ownership|null */
+	private $ownership;
+
+	/** @var Employment|null */
+	private $employment;
+
+	/** @var Income|null */
+	private $income;
+
+	/** @var Commitments|null */
+	private $commitments;
 
 	public function __construct(string $personalId, string $firstName, string $lastName)
 	{
@@ -73,6 +116,48 @@ final class Person
 		$this->bankAccount = $bankAccount;
 	}
 
+	public function getMaritalStatus(): ?string
+	{
+		return $this->maritalStatus;
+	}
+
+	public function setMaritalStatus(?string $maritalStatus): void
+	{
+		if ($maritalStatus !== null) {
+			if (!in_array($maritalStatus, MaritalStatus::VALID_STATUSES, true)) {
+				throw new InvalidArgumentException(sprintf('Invalid marital status "%s" given', $maritalStatus));
+			}
+		}
+
+		$this->maritalStatus = $maritalStatus;
+	}
+
+	public function getEducation(): ?string
+	{
+		return $this->education;
+	}
+
+	public function setEducation(?string $education): void
+	{
+		if ($education !== null) {
+			if (!in_array($education, Education::VALID_EDUCATION, true)) {
+				throw new InvalidArgumentException(sprintf('Invalid education "%s" given', $education));
+			}
+		}
+
+		$this->education = $education;
+	}
+
+	public function getChildren(): ?int
+	{
+		return $this->children;
+	}
+
+	public function setChildren(?int $children): void
+	{
+		$this->children = $children;
+	}
+
 	/**
 	 * @return string[]
 	 */
@@ -115,14 +200,125 @@ final class Person
 		$this->emails[] = $email;
 	}
 
-	public function getIdCardNumber(): ?string
+	/**
+	 * @return string[]
+	 */
+	public function getIpAddresses(): array
 	{
-		return $this->idCardNumber;
+		return $this->ipAddresses;
 	}
 
-	public function setIdCardNumber(string $idCardNumber): void
+	/**
+	 * @param string[] $ips
+	 */
+	public function setIpAddresses(array $ips): void
 	{
-		$this->idCardNumber = $idCardNumber;
+		$this->ipAddresses = $ips;
+	}
+
+	public function addIpAddress(string $ip): void
+	{
+		$this->ipAddresses[] = $ip;
+	}
+
+	public function getAddress(): ?Address
+	{
+		return $this->address;
+	}
+
+	public function setAddress(?Address $address): void
+	{
+		$this->address = $address;
+	}
+
+	public function getDeliveryAddress(): ?Address
+	{
+		return $this->deliveryAddress;
+	}
+
+	public function setDeliveryAddress(?Address $deliveryAddress): void
+	{
+		$this->deliveryAddress = $deliveryAddress;
+	}
+
+	public function getIdentityCard(): ?IdentityCard
+	{
+		return $this->identityCard;
+	}
+
+	public function setIdentityCard(?IdentityCard $identityCard): void
+	{
+		$this->identityCard = $identityCard;
+	}
+
+	public function getPassport(): ?Passport
+	{
+		return $this->passport;
+	}
+
+	public function setPassport(?Passport $passport): void
+	{
+		$this->passport = $passport;
+	}
+
+	public function getDriverLicense(): ?DriverLicense
+	{
+		return $this->driverLicense;
+	}
+
+	public function setDriverLicense(?DriverLicense $driverLicense): void
+	{
+		$this->driverLicense = $driverLicense;
+	}
+
+	public function getLoan(): ?Loan
+	{
+		return $this->loan;
+	}
+
+	public function setLoan(?Loan $loan): void
+	{
+		$this->loan = $loan;
+	}
+
+	public function getOwnership(): ?Ownership
+	{
+		return $this->ownership;
+	}
+
+	public function setOwnership(?Ownership $ownership): void
+	{
+		$this->ownership = $ownership;
+	}
+
+	public function getEmployment(): ?Employment
+	{
+		return $this->employment;
+	}
+
+	public function setEmployment(?Employment $employment): void
+	{
+		$this->employment = $employment;
+	}
+
+	public function getIncome(): ?Income
+	{
+		return $this->income;
+	}
+
+	public function setIncome(?Income $income): void
+	{
+		$this->income = $income;
+	}
+
+	public function getCommitments(): ?Commitments
+	{
+		return $this->commitments;
+	}
+
+	public function setCommitments(?Commitments $commitments): void
+	{
+		$this->commitments = $commitments;
 	}
 
 }

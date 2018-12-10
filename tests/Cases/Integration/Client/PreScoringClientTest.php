@@ -1,29 +1,32 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Tests\Cases\Client;
+namespace Contributte\NRCZ\Tests\Cases\Integration\Client;
 
 use Contributte\NRCZ\Client\PreScoringClientFactory;
-use Contributte\NRCZ\Entity\Person;
+use Contributte\NRCZ\Tests\Helper\PersonCreator;
 use Tester\Assert;
 use Tester\TestCase;
 
-require_once __DIR__ . '/../../bootstrap.php';
+require_once __DIR__ . '/../../../bootstrap.php';
 
 class PreScoringClientTest extends TestCase
 {
 
-	/** @var Person */
-	private $person;
-
-	public function setUp(): void
+	public function testPreScorePositiveWithMinimalPerson(): void
 	{
-		$this->person = new Person('605223/1234', 'Žofinka', 'Čížková');
+		$client = (new PreScoringClientFactory('testresultano'))->create();
+		$result = $client->preScore(PersonCreator::createMinimal());
+
+		Assert::true($result->isPositive());
+		Assert::false($result->hasBirthDay());
+		Assert::false($result->hasNameDay());
+		Assert::equal('', $result->getReason());
 	}
 
 	public function testPreScorePositive(): void
 	{
 		$client = (new PreScoringClientFactory('testresultano'))->create();
-		$result = $client->preScore($this->person);
+		$result = $client->preScore(PersonCreator::createFull());
 
 		Assert::true($result->isPositive());
 		Assert::false($result->hasBirthDay());
@@ -34,7 +37,7 @@ class PreScoringClientTest extends TestCase
 	public function testPreScoreNegative(): void
 	{
 		$client = (new PreScoringClientFactory('testresultne'))->create();
-		$result = $client->preScore($this->person);
+		$result = $client->preScore(PersonCreator::createMinimal());
 
 		Assert::false($result->isPositive());
 		Assert::false($result->hasBirthDay());
@@ -48,7 +51,7 @@ class PreScoringClientTest extends TestCase
 	public function testPreScoreResultError(): void
 	{
 		$client = (new PreScoringClientFactory('invalidClientId'))->create();
-		$client->preScore($this->person);
+		$client->preScore(PersonCreator::createMinimal());
 	}
 
 }

@@ -8,4 +8,6 @@
 # Tests
 /temp
 /tests/tmp
+*.actual
+*.expected
 /coverage.xml

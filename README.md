@@ -13,7 +13,7 @@
 
 The development is sponsored by [Asisteam](https://www.asisteam.cz/). Thank you guys! :+1:
 
-<img src="https://www.asisteam.cz/img/logo.svg" width="100" alt="Asisteam" title="Asisteam"/>
+<img src="https://www.asisteam.cz/img/logo.svg" width="200" alt="Asisteam" title="Asisteam"/>
 
 ## Discussion / Help
 
@@ -33,7 +33,8 @@ composer require contributte/nebankovni-registr-cz
 
 ## Overview
 
-- [PreScoring](https://github.com/contributte/nebankovni-registr-cz/blob/master/.docs/README.md#preScoring)
+- [PreScoring](https://github.com/contributte/nebankovni-registr-cz/blob/master/.docs/README.md#PreScoring)
+- [Lustration](https://github.com/contributte/nebankovni-registr-cz/blob/master/.docs/README.md#Lustration)
 
 ## Maintainers
 

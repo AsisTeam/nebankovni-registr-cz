@@ -2,13 +2,13 @@
 
 namespace Contributte\NRCZ\Client;
 
-use Contributte\NRCZ\Request\PreScoringRequest;
+use Contributte\NRCZ\Request\LustrationRequest;
 use SoapClient;
 
-final class PreScoringClientFactory
+final class LustrationClientFactory
 {
 
-	private const WSDL = 'https://www.nebankovni-registr.cz/component/csoap/npre?wsdl';
+	private const WSDL = 'https://www.nebankovni-registr.cz/component/csoap/nrnew?wsdl';
 
 	/** @var string */
 	private $clientId;
@@ -18,7 +18,7 @@ final class PreScoringClientFactory
 		$this->clientId = $clientId;
 	}
 
-	public function create(): PreScoringClient
+	public function create(): LustrationClient
 	{
 		$soap = new SoapClient(
 			self::WSDL,
@@ -27,7 +27,7 @@ final class PreScoringClientFactory
 			]
 		);
 
-		return new PreScoringClient($soap, new PreScoringRequest(), $this->clientId);
+		return new LustrationClient($soap, new LustrationRequest(), $this->clientId);
 	}
 
 }

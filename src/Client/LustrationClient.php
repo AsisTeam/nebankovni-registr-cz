@@ -6,14 +6,14 @@ use Contributte\NRCZ\Entity\Person;
 use Contributte\NRCZ\Exception\Logical\InvalidArgumentException;
 use Contributte\NRCZ\Exception\Runtime\RequestException;
 use Contributte\NRCZ\Exception\Runtime\ResponseException;
-use Contributte\NRCZ\Result\PreScoringResult;
+use Contributte\NRCZ\Result\LustrationResult;
 
-final class PreScoringClient extends AbstractSoapClient
+final class LustrationClient extends AbstractSoapClient
 {
 
-	private const METHOD = 'plgSOAPnpre_scoring';
+	private const METHOD = 'plgSOAPnrnew_lust';
 
-	public function preScore(Person $person): PreScoringResult
+	public function lust(Person $person): LustrationResult
 	{
 		try {
 			$result = $this->call(self::METHOD, $person);
@@ -22,7 +22,7 @@ final class PreScoringClient extends AbstractSoapClient
 		}
 
 		try {
-			return PreScoringResult::fromArray($result);
+			return LustrationResult::fromArray($result);
 		} catch (InvalidArgumentException $e) {
 			throw new ResponseException($e->getMessage(), $e->getCode(), $e);
 		}

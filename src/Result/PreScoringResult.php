@@ -65,7 +65,7 @@ final class PreScoringResult
 	public static function fromArray(array $data): self
 	{
 		if (!array_key_exists('result', $data)) {
-			throw new ResponseException('preScore API response "result" field missing');
+			throw new ResponseException('PreScore API response "result" field missing');
 		}
 
 		return new self($data['result'], $data['birthday'] ?? '', $data['name_day'] ?? '', $data['reason'] ?? '');
