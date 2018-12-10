@@ -7,19 +7,19 @@ use DateTimeImmutable;
 final class Loan
 {
 
-	/** @var float */
+	/** @var int */
 	private $amount;
 
-	/** @var DateTimeImmutable */
+	/** @var DateTimeImmutable|null */
 	private $dueDate;
 
-	/** @var float */
+	/** @var int|null */
 	private $monthlyPayment;
 
-	/** @var int */
+	/** @var int|null */
 	private $paymentsCount;
 
-	public function __construct(float $amount, DateTimeImmutable $dueDate, float $monthlyPayment, int $paymentsCount)
+	public function __construct(int $amount, ?DateTimeImmutable $dueDate = null, ?int $monthlyPayment = null, ?int $paymentsCount = null)
 	{
 		$this->amount = $amount;
 		$this->dueDate = $dueDate;
@@ -27,22 +27,22 @@ final class Loan
 		$this->paymentsCount = $paymentsCount;
 	}
 
-	public function getAmount(): float
+	public function getAmount(): int
 	{
 		return $this->amount;
 	}
 
-	public function getDueDate(): DateTimeImmutable
+	public function getDueDate(): ?DateTimeImmutable
 	{
 		return $this->dueDate;
 	}
 
-	public function getMonthlyPayment(): float
+	public function getMonthlyPayment(): ?int
 	{
 		return $this->monthlyPayment;
 	}
 
-	public function getPaymentsCount(): int
+	public function getPaymentsCount(): ?int
 	{
 		return $this->paymentsCount;
 	}

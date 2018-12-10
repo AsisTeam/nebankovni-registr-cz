@@ -5,7 +5,7 @@ namespace Contributte\NRCZ\Request;
 use Contributte\NRCZ\Entity\Person;
 use Contributte\NRCZ\Utils\Formatter;
 
-final class LustrationRequest implements IRequest
+final class LustrationRequest
 {
 
 	private const DATE_FORMAT = 'Y-m-d';
@@ -86,10 +86,10 @@ final class LustrationRequest implements IRequest
 		}
 
 		if ($p->getLoan() !== null) {
-			$out['loan_amount'] = $p->getLoan()->getAmount();
-			$out['loan_due_day'] = $p->getLoan()->getDueDate()->format(self::DATE_FORMAT);
-			$out['loan_monthly_payment'] = $p->getLoan()->getMonthlyPayment();
-			$out['loan_number_payments'] = $p->getLoan()->getPaymentsCount();
+			$out['loan_amount'] = (string) $p->getLoan()->getAmount();
+			$out['loan_due_day'] = $p->getLoan()->getDueDate() !== null ? $p->getLoan()->getDueDate()->format(self::DATE_FORMAT) : '';
+			$out['loan_monthly_payment'] = (string) $p->getLoan()->getMonthlyPayment() ?? '';
+			$out['loan_number_payments'] = (string) $p->getLoan()->getPaymentsCount() ?? '';
 		}
 
 		if ($p->getOwnership() !== null) {
@@ -110,20 +110,20 @@ final class LustrationRequest implements IRequest
 		}
 
 		if ($p->getIncome() !== null) {
-			$out['net_monthly_income'] = $p->getIncome()->getNetMonthlyIncome();
-			$out['income_family_members'] = $p->getIncome()->getIncomeFamilyMembers() ?? '';
+			$out['net_monthly_income'] = (string) $p->getIncome()->getNetMonthlyIncome();
+			$out['income_family_members'] = (string) $p->getIncome()->getIncomeFamilyMembers() ?? '';
 		}
 
 		if ($p->getCommitments() !== null) {
-			$out['bank_debt'] = $p->getCommitments()->getBanksDebt() ?? '';
-			$out['debt_non_bank_providers'] = $p->getCommitments()->getNonBankProvidersDebt() ?? '';
+			$out['bank_debt'] = (string) $p->getCommitments()->getBanksDebt() ?? '';
+			$out['debt_non_bank_providers'] = (string) $p->getCommitments()->getNonBankProvidersDebt() ?? '';
 
-			$out['total_debt_for_execution'] = $p->getCommitments()->getExecutionsDebts() ?? '';
-			$out['debt_insolvencies'] = $p->getCommitments()->getInsolvenciesDebts() ?? '';
-			$out['alimony'] = $p->getCommitments()->getAlimony() ?? '';
-			$out['other_regular_deduction_from_wages'] = $p->getCommitments()->getOtherRegularDeductionFromWages() ?? '';
-			$out['constandard_living_costs'] = $p->getCommitments()->getConstandardLivingCosts() ?? '';
-			$out['debt_tax_social_health_insurance'] = $p->getCommitments()->getSocialAndHealthInsuranceDebt() ?? '';
+			$out['total_debt_for_execution'] = (string) $p->getCommitments()->getExecutionsDebts() ?? '';
+			$out['debt_insolvencies'] = (string) $p->getCommitments()->getInsolvenciesDebts() ?? '';
+			$out['alimony'] = (string) $p->getCommitments()->getAlimony() ?? '';
+			$out['other_regular_deduction_from_wages'] = (string) $p->getCommitments()->getOtherRegularDeductionFromWages() ?? '';
+			$out['constandard_living_costs'] = (string) $p->getCommitments()->getConstandardLivingCosts() ?? '';
+			$out['debt_tax_social_health_insurance'] = (string) $p->getCommitments()->getSocialAndHealthInsuranceDebt() ?? '';
 		}
 
 		return $out;

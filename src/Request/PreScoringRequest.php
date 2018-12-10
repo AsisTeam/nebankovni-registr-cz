@@ -4,7 +4,7 @@ namespace Contributte\NRCZ\Request;
 
 use Contributte\NRCZ\Entity\Person;
 
-final class PreScoringRequest implements IRequest
+final class PreScoringRequest
 {
 
 	/**

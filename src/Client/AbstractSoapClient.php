@@ -2,9 +2,7 @@
 
 namespace Contributte\NRCZ\Client;
 
-use Contributte\NRCZ\Entity\Person;
 use Contributte\NRCZ\Exception\Runtime\RequestException;
-use Contributte\NRCZ\Request\IRequest;
 use SoapClient;
 use SoapFault;
 
@@ -17,22 +15,18 @@ abstract class AbstractSoapClient
 	/** @var string */
 	protected $clientId;
 
-	/** @var IRequest */
-	protected $requestPreparer;
-
-	public function __construct(SoapClient $client, IRequest $requestPreparer, string $clientId)
+	public function __construct(SoapClient $client, string $clientId)
 	{
 		$this->client = $client;
-		$this->requestPreparer = $requestPreparer;
 		$this->clientId = $clientId;
 	}
 
 	/**
+	 * @param mixed[]  $data
 	 * @return mixed
 	 */
-	protected function call(string $method, Person $person)
+	protected function call(string $method, array $data)
 	{
-		$data = $this->requestPreparer->prepareData($person);
 		$data['client_id'] = $this->clientId;
 
 		$json = json_encode($data);

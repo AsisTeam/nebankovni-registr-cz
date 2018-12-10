@@ -6,17 +6,30 @@ use Contributte\NRCZ\Entity\Person;
 use Contributte\NRCZ\Exception\Logical\InvalidArgumentException;
 use Contributte\NRCZ\Exception\Runtime\RequestException;
 use Contributte\NRCZ\Exception\Runtime\ResponseException;
+use Contributte\NRCZ\Request\LustrationRequest;
 use Contributte\NRCZ\Result\LustrationResult;
+use SoapClient;
 
 final class LustrationClient extends AbstractSoapClient
 {
 
 	private const METHOD = 'plgSOAPnrnew_lust';
 
+	/** @var LustrationRequest */
+	private $requestPreparer;
+
+	public function __construct(SoapClient $client, string $clientId)
+	{
+		parent::__construct($client, $clientId);
+
+		$this->requestPreparer = new LustrationRequest();
+	}
+
 	public function lust(Person $person): LustrationResult
 	{
 		try {
-			$result = $this->call(self::METHOD, $person);
+			$data = $this->requestPreparer->prepareData($person);
+			$result = $this->call(self::METHOD, $data);
 		} catch (InvalidArgumentException $e) {
 			throw new RequestException($e->getMessage(), $e->getCode(), $e);
 		}

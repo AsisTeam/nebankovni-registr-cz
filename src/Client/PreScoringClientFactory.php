@@ -2,7 +2,6 @@
 
 namespace Contributte\NRCZ\Client;
 
-use Contributte\NRCZ\Request\PreScoringRequest;
 use SoapClient;
 
 final class PreScoringClientFactory
@@ -27,7 +26,7 @@ final class PreScoringClientFactory
 			]
 		);
 
-		return new PreScoringClient($soap, new PreScoringRequest(), $this->clientId);
+		return new PreScoringClient($soap, $this->clientId);
 	}
 
 }

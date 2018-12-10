@@ -4,10 +4,10 @@ namespace Contributte\NRCZ\Client;
 
 use SoapClient;
 
-final class LustrationClientFactory
+final class ShareServiceClientFactory
 {
 
-	private const WSDL = 'https://www.nebankovni-registr.cz/component/csoap/nrnew?wsdl';
+	private const WSDL = 'https://www.nebankovni-registr.cz/component/csoap/nrsh?wsdl';
 
 	/** @var string */
 	private $clientId;
@@ -17,7 +17,7 @@ final class LustrationClientFactory
 		$this->clientId = $clientId;
 	}
 
-	public function create(): LustrationClient
+	public function create(): ShareServiceClient
 	{
 		$soap = new SoapClient(
 			self::WSDL,
@@ -26,7 +26,7 @@ final class LustrationClientFactory
 			]
 		);
 
-		return new LustrationClient($soap, $this->clientId);
+		return new ShareServiceClient($soap, $this->clientId);
 	}
 
 }
