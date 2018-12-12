@@ -3,6 +3,7 @@
 namespace Contributte\NRCZ\Result;
 
 use Contributte\NRCZ\Exception\Runtime\ResponseException;
+use Contributte\NRCZ\Result\Validator\ResultValidator;
 
 final class PreScoringResult
 {
@@ -25,7 +26,7 @@ final class PreScoringResult
 	public function __construct(string $result, string $birthDay, string $nameDay, string $reason)
 	{
 		if (!$this->isValidResult($result)) {
-			throw new ResponseException('preScore API result failure: ' . $result);
+			throw new ResponseException('PreScore API result failure: ' . $result);
 		}
 
 		$this->result = $result;
@@ -67,6 +68,8 @@ final class PreScoringResult
 		if (!array_key_exists('result', $data)) {
 			throw new ResponseException('PreScore API response "result" field missing');
 		}
+
+		ResultValidator::validate($data['result']);
 
 		return new self($data['result'], $data['birthday'] ?? '', $data['name_day'] ?? '', $data['reason'] ?? '');
 	}

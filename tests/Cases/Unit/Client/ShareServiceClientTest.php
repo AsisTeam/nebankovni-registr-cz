@@ -40,7 +40,7 @@ class ShareServiceClientTest extends TestCase
 
 
 	/**
-	 * @throws Contributte\NRCZ\Exception\Runtime\ResponseException
+	 * @throws Contributte\NRCZ\Exception\Runtime\ServiceNotAllowedException
 	 */
 	public function testShareResultError(): void
 	{

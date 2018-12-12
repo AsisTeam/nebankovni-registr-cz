@@ -8,6 +8,7 @@ use Contributte\NRCZ\Result\Lustration\CurrentCredit;
 use Contributte\NRCZ\Result\Lustration\Lustration;
 use Contributte\NRCZ\Result\Lustration\Person;
 use Contributte\NRCZ\Result\Lustration\ShareData;
+use Contributte\NRCZ\Result\Validator\ResultValidator;
 
 final class LustrationResult
 {
@@ -79,6 +80,8 @@ final class LustrationResult
 		if (!array_key_exists('result', $data['lustration'])) {
 			throw new InvalidArgumentException('Lustration API response lustration "result" field missing');
 		}
+
+		ResultValidator::validate($data['lustration']['result']);
 
 		$lustration = Lustration::fromArray($data['lustration']);
 

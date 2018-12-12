@@ -28,7 +28,7 @@ class LustrationClientTest extends TestCase
 	}
 
 	/**
-	 * @throws Contributte\NRCZ\Exception\Runtime\ResponseException
+	 * @throws Contributte\NRCZ\Exception\Runtime\ServiceNotAllowedException
 	 */
 	public function testPreScoreResultError(): void
 	{
