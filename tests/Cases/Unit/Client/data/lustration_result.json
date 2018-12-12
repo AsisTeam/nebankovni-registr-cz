@@ -1,0 +1,33 @@
+{
+  "lustration": {
+    "id": "testba49cca3a2b61d2bf089088ctest",
+    "result": "A",
+    "DTI": "0.1",
+    "DSTI": "19.9",
+    "LTV": "-1"
+  },
+  "person": {
+    "result": "C"
+  },
+  "share_data": {
+    "result": "B",
+    "loan_applications": "18",
+    "rejected_loan_applications": "8",
+    "active_loan_applications": "2",
+    "active_loans": "4",
+    "delayed_loans": "3",
+    "issued_loans_sum": "1",
+    "average_time_of_paid": "250"
+  },
+  "certificate": {
+    "result": "ano"
+  },
+  "current_credit": {
+    "NR": 2000,
+    "CEE": 2000,
+    "leadscoring": 10000,
+    "employers_confirmation": 2000,
+    "lustration_employer": 2000,
+    "postal_services": 2000
+  }
+}

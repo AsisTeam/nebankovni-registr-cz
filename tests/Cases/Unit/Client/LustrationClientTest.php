@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Tests\Cases\Integration\Client;
+namespace Contributte\NRCZ\Tests\Cases\Unit\Client;
 
-use Contributte\NRCZ\Client\LustrationClientFactory;
+use Contributte\NRCZ\Client\LustrationClient;
 use Contributte\NRCZ\Result\Lustration\Certificate;
 use Contributte\NRCZ\Result\Lustration\ResultEnum;
 use Contributte\NRCZ\Tests\Helper\PersonCreator;
@@ -16,7 +16,8 @@ class LustrationClientTest extends TestCase
 
 	public function testLustWithMinimalPerson(): void
 	{
-		$client = (new LustrationClientFactory('testresult'))->create();
+		$soap = SoapMockHelper::createSoapMock('lustration_result.json');
+		$client = new LustrationClient($soap, 'clientID');
 		$result = $client->lust(PersonCreator::createMinimal());
 
 		Assert::equal('testba49cca3a2b61d2bf089088ctest', $result->getLustration()->getId());
@@ -31,7 +32,9 @@ class LustrationClientTest extends TestCase
 	 */
 	public function testPreScoreResultError(): void
 	{
-		$client = (new LustrationClientFactory('invalidClientId'))->create();
+		$soap = SoapMockHelper::createSoapMock('error_result.json');
+		$client = new LustrationClient($soap, 'invalidClientId');
+
 		$client->lust(PersonCreator::createMinimal());
 	}
 

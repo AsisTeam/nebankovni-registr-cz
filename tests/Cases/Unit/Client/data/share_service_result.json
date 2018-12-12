@@ -1,0 +1,26 @@
+{
+  "lustration": {
+    "id": "93d50dae791c1be669a1ab9b0d156a68",
+    "result": "B"
+  },
+  "share_data": {
+    "loan_applications": 27,
+    "rejected_loan_applications": 8,
+    "active_loan_applications": 1,
+    "active_loans": "0",
+    "delayed_loans": 2,
+    "issued_loans_sum": "0",
+    "average_time_of_paid": 81,
+    "result": "C"
+  },
+  "certificate": {
+    "result": "ne"
+  },
+  "current_credit": {
+    "NR": "257",
+    "CEE": "214",
+    "employers_confirmation": "0",
+    "lustration_employer": "0",
+    "postal_services": "0"
+  }
+}

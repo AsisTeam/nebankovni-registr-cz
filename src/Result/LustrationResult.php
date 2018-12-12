@@ -15,9 +15,6 @@ final class LustrationResult
 	/** @var Lustration */
 	private $lustration;
 
-	/** @var Person */
-	private $person;
-
 	/** @var ShareData */
 	private $shareData;
 
@@ -27,29 +24,27 @@ final class LustrationResult
 	/** @var CurrentCredit */
 	private $credit;
 
+	/** @var Person|null */
+	private $person;
+
 	public function __construct(
 		Lustration $lustration,
-		Person $person,
 		ShareData $shareData,
 		Certificate $certificate,
-		CurrentCredit $credit
+		CurrentCredit $credit,
+		?Person $person = null
 	)
 	{
 		$this->lustration = $lustration;
-		$this->person = $person;
 		$this->shareData = $shareData;
 		$this->certificate = $certificate;
 		$this->credit = $credit;
+		$this->person = $person;
 	}
 
 	public function getLustration(): Lustration
 	{
 		return $this->lustration;
-	}
-
-	public function getPerson(): Person
-	{
-		return $this->person;
 	}
 
 	public function getShareData(): ShareData
@@ -67,6 +62,11 @@ final class LustrationResult
 		return $this->credit;
 	}
 
+	public function getPerson(): ?Person
+	{
+		return $this->person;
+	}
+
 	/**
 	 * @param mixed[] $data
 	 */
@@ -82,8 +82,9 @@ final class LustrationResult
 
 		$lustration = Lustration::fromArray($data['lustration']);
 
-		if (!array_key_exists('person', $data)) {
-			throw new InvalidArgumentException('Lustration API response "person" field missing');
+		$person = null;
+		if (array_key_exists('person', $data)) {
+			$person = Person::fromArray($data['person']);
 		}
 		if (!array_key_exists('share_data', $data)) {
 			throw new InvalidArgumentException('Lustration API response "share_data" field missing');
@@ -97,10 +98,10 @@ final class LustrationResult
 
 		return new self(
 			$lustration,
-			Person::fromArray($data['person']),
 			ShareData::fromArray($data['share_data']),
 			Certificate::fromArray($data['certificate']),
-			CurrentCredit::fromArray($data['current_credit'])
+			CurrentCredit::fromArray($data['current_credit']),
+			$person
 		);
 	}
 

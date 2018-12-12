@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Tests\Cases\Integration\Client;
+namespace Contributte\NRCZ\Tests\Cases\Unit\Client;
 
-use Contributte\NRCZ\Client\PreScoringClientFactory;
+use Contributte\NRCZ\Client\PreScoringClient;
 use Contributte\NRCZ\Tests\Helper\PersonCreator;
 use Tester\Assert;
 use Tester\TestCase;
@@ -14,7 +14,9 @@ class PreScoringClientTest extends TestCase
 
 	public function testPreScorePositiveWithMinimalPerson(): void
 	{
-		$client = (new PreScoringClientFactory('testresultano'))->create();
+		$soap = SoapMockHelper::createSoapMock('pre_scoring_result_positive.json');
+		$client = new PreScoringClient($soap, 'clientId');
+
 		$result = $client->preScore(PersonCreator::createMinimal());
 
 		Assert::true($result->isPositive());
@@ -25,7 +27,9 @@ class PreScoringClientTest extends TestCase
 
 	public function testPreScorePositive(): void
 	{
-		$client = (new PreScoringClientFactory('testresultano'))->create();
+		$soap = SoapMockHelper::createSoapMock('pre_scoring_result_positive.json');
+		$client = new PreScoringClient($soap, 'clientId');
+
 		$result = $client->preScore(PersonCreator::createFull());
 
 		Assert::true($result->isPositive());
@@ -36,7 +40,9 @@ class PreScoringClientTest extends TestCase
 
 	public function testPreScoreNegative(): void
 	{
-		$client = (new PreScoringClientFactory('testresultne'))->create();
+		$soap = SoapMockHelper::createSoapMock('pre_scoring_result_negative.json');
+		$client = new PreScoringClient($soap, 'clientId');
+
 		$result = $client->preScore(PersonCreator::createMinimal());
 
 		Assert::false($result->isPositive());
@@ -50,7 +56,8 @@ class PreScoringClientTest extends TestCase
 	 */
 	public function testPreScoreResultError(): void
 	{
-		$client = (new PreScoringClientFactory('invalidClientId'))->create();
+		$soap = SoapMockHelper::createSoapMock('error_result.json');
+		$client = new PreScoringClient($soap, 'invalidClientId');
 		$client->preScore(PersonCreator::createMinimal());
 	}
 

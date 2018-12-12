@@ -31,6 +31,11 @@ final class Certificate
 		return $this->result;
 	}
 
+	public function hasCertificate(): bool
+	{
+		return $this->result === self::YES;
+	}
+
 	/**
 	 * @param string[] $data
 	 */

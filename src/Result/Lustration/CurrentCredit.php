@@ -12,9 +12,6 @@ final class CurrentCredit
 	private $cee;
 
 	/** @var int */
-	private $leadScoring;
-
-	/** @var int */
 	private $employerConfirmation;
 
 	/** @var int */
@@ -26,7 +23,6 @@ final class CurrentCredit
 	public function __construct(
 		int $nr,
 		int $cee,
-		int $leadScoring,
 		int $employerConfirmation,
 		int $lustrationEmployer,
 		int $postalServices
@@ -34,7 +30,6 @@ final class CurrentCredit
 	{
 		$this->nr = $nr;
 		$this->cee = $cee;
-		$this->leadScoring = $leadScoring;
 		$this->employerConfirmation = $employerConfirmation;
 		$this->lustrationEmployer = $lustrationEmployer;
 		$this->postalServices = $postalServices;
@@ -48,11 +43,6 @@ final class CurrentCredit
 	public function getCee(): int
 	{
 		return $this->cee;
-	}
-
-	public function getLeadScoring(): int
-	{
-		return $this->leadScoring;
 	}
 
 	public function getEmployerConfirmation(): int
@@ -71,17 +61,16 @@ final class CurrentCredit
 	}
 
 	/**
-	 * @param int[] $data
+	 * @param mixed[] $data
 	 */
 	public static function fromArray(array $data): self
 	{
 		return new self(
-			$data['NR'] ?? 0,
-			$data['CEE'] ?? 0,
-			$data['leadscoring'] ?? 0,
-			$data['employers_confirmation'] ?? 0,
-			$data['lustration_employer'] ?? 0,
-			$data['postal_services'] ?? 0
+			(int) $data['NR'] ?? 0,
+			(int) $data['CEE'] ?? 0,
+			(int) $data['employers_confirmation'] ?? 0,
+			(int) $data['lustration_employer'] ?? 0,
+			(int) $data['postal_services'] ?? 0
 		);
 	}
 

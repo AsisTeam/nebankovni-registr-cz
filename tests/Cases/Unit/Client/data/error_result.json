@@ -1,0 +1,7 @@
+{
+  "client_id": "invalidClientId",
+  "code": "1",
+  "lustration": {
+    "result": "Service is not allowed for you."
+  }
+}
