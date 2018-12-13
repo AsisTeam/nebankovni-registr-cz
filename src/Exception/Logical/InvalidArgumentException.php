@@ -2,7 +2,9 @@
 
 namespace Contributte\NRCZ\Exception\Logical;
 
-final class InvalidArgumentException extends \InvalidArgumentException
+use LogicException;
+
+final class InvalidArgumentException extends LogicException
 {
 
 }

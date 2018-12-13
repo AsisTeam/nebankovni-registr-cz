@@ -2,6 +2,8 @@
 
 namespace Contributte\NRCZ\Result;
 
+use Contributte\NRCZ\Enum\PreScoringReason;
+use Contributte\NRCZ\Exception\Logical\UnknownReasonException;
 use Contributte\NRCZ\Exception\Runtime\ResponseException;
 use Contributte\NRCZ\Result\Validator\ResultValidator;
 
@@ -27,6 +29,10 @@ final class PreScoringResult
 	{
 		if (!$this->isValidResult($result)) {
 			throw new ResponseException('PreScore API result failure: ' . $result);
+		}
+
+		if (strlen($reason) > 0 && !in_array($reason, PreScoringReason::VALID_REASONS, true)) {
+			throw new UnknownReasonException($reason);
 		}
 
 		$this->result = $result;
