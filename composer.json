@@ -53,6 +53,11 @@
     ],
     "phpstan": [
       "temp/phpstan/vendor/bin/phpstan analyse -l max -c phpstan.neon src"
+    ],
+    "ci": [
+      "composer qa",
+      "composer phpstan",
+      "composer tests"
     ]
   },
   "extra": {
