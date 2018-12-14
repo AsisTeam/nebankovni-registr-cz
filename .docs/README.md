@@ -11,6 +11,7 @@ You must have your `clientID` provided by `analytics@decp.eu` to access the API,
 - [PreScoring](#PreScoring)
 - [Lustration](#Lustration)
 - [SharedService](#SharedService)
+- [Nette](#Nette)
 
 ---
 
@@ -81,4 +82,20 @@ $res = $client->share(new Person('605223/1234', 'Žofinka', 'Čížková'));
 
 // $res is LustrationResult object, but getPerson() is always null
 // please see Lustration -> Usage
+```
+
+## Nette
+
+You can setup package as Nette compiler extension using neon config
+Extension will create all client factories as services
+
+### Usage
+
+```neon
+extensions:
+	nrcz: Contributte\NRCZ\DI\NRCZExtension
+	
+nrcz:
+	client_id: testresult # Your client id from analytics@decp.eu
+
 ```
