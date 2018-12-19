@@ -1,10 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Entity;
+namespace AsisTeam\NRCZ\Entity;
 
-use Contributte\NRCZ\Enum\Education;
-use Contributte\NRCZ\Enum\MaritalStatus;
-use Contributte\NRCZ\Exception\Logical\InvalidArgumentException;
+use AsisTeam\NRCZ\Enum\Education;
+use AsisTeam\NRCZ\Enum\MaritalStatus;
+use AsisTeam\NRCZ\Exception\Logical\InvalidArgumentException;
 
 final class Person
 {

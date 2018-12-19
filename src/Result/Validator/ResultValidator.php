@@ -1,10 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Result\Validator;
+namespace AsisTeam\NRCZ\Result\Validator;
 
-use Contributte\NRCZ\Enum\ErrorResult;
-use Contributte\NRCZ\Exception\Runtime\ServiceNotAllowedException;
-use Contributte\NRCZ\Exception\Runtime\ServiceNotPaidException;
+use AsisTeam\NRCZ\Enum\ErrorResult;
+use AsisTeam\NRCZ\Exception\Runtime\ServiceNotAllowedException;
+use AsisTeam\NRCZ\Exception\Runtime\ServiceNotPaidException;
 
 final class ResultValidator
 {

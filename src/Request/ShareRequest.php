@@ -1,10 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Request;
+namespace AsisTeam\NRCZ\Request;
 
-use Contributte\NRCZ\Entity\Loan;
-use Contributte\NRCZ\Enum\LoanStatus;
-use Contributte\NRCZ\Exception\Logical\InvalidArgumentException;
+use AsisTeam\NRCZ\Entity\Loan;
+use AsisTeam\NRCZ\Enum\LoanStatus;
+use AsisTeam\NRCZ\Exception\Logical\InvalidArgumentException;
 
 final class ShareRequest
 {

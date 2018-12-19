@@ -1,9 +1,9 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Tests\Cases\Unit\Client;
+namespace AsisTeam\NRCZ\Tests\Cases\Unit\Client;
 
-use Contributte\NRCZ\Client\PreScoringClient;
-use Contributte\NRCZ\Tests\Helper\PersonCreator;
+use AsisTeam\NRCZ\Client\PreScoringClient;
+use AsisTeam\NRCZ\Tests\Helper\PersonCreator;
 use Tester\Assert;
 use Tester\TestCase;
 
@@ -52,7 +52,7 @@ class PreScoringClientTest extends TestCase
 	}
 
 	/**
-	 * @throws Contributte\NRCZ\Exception\Runtime\ResponseException
+	 * @throws AsisTeam\NRCZ\Exception\Runtime\ResponseException
 	 */
 	public function testPreScoreResultError(): void
 	{

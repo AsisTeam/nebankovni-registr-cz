@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Exception\Runtime;
+namespace AsisTeam\NRCZ\Exception\Runtime;
 
-use Contributte\NRCZ\Exception\RuntimeException;
+use AsisTeam\NRCZ\Exception\RuntimeException;
 
 final class ServiceNotPaidException extends RuntimeException
 {

@@ -1,14 +1,14 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Result;
+namespace AsisTeam\NRCZ\Result;
 
-use Contributte\NRCZ\Exception\Logical\InvalidArgumentException;
-use Contributte\NRCZ\Result\Lustration\Certificate;
-use Contributte\NRCZ\Result\Lustration\CurrentCredit;
-use Contributte\NRCZ\Result\Lustration\Lustration;
-use Contributte\NRCZ\Result\Lustration\Person;
-use Contributte\NRCZ\Result\Lustration\ShareData;
-use Contributte\NRCZ\Result\Validator\ResultValidator;
+use AsisTeam\NRCZ\Exception\Logical\InvalidArgumentException;
+use AsisTeam\NRCZ\Result\Lustration\Certificate;
+use AsisTeam\NRCZ\Result\Lustration\CurrentCredit;
+use AsisTeam\NRCZ\Result\Lustration\Lustration;
+use AsisTeam\NRCZ\Result\Lustration\Person;
+use AsisTeam\NRCZ\Result\Lustration\ShareData;
+use AsisTeam\NRCZ\Result\Validator\ResultValidator;
 
 final class LustrationResult
 {

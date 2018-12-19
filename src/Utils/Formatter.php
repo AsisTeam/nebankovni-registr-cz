@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Utils;
+namespace AsisTeam\NRCZ\Utils;
 
-use Contributte\NRCZ\Enum\Boolean;
+use AsisTeam\NRCZ\Enum\Boolean;
 
 final class Formatter
 {

@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Result\Lustration;
+namespace AsisTeam\NRCZ\Result\Lustration;
 
-use Contributte\NRCZ\Exception\Logical\InvalidArgumentException;
+use AsisTeam\NRCZ\Exception\Logical\InvalidArgumentException;
 
 final class ShareData
 {

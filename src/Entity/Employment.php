@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Entity;
+namespace AsisTeam\NRCZ\Entity;
 
-use Contributte\NRCZ\Exception\Logical\InvalidArgumentException;
+use AsisTeam\NRCZ\Exception\Logical\InvalidArgumentException;
 use DateTimeImmutable;
 
 final class Employment
@@ -34,7 +34,7 @@ final class Employment
 
 	public function __construct(string $type, DateTimeImmutable $start, ?DateTimeImmutable $end = null)
 	{
-		if (!in_array($type, \Contributte\NRCZ\Enum\Employment::VALID_EMPLOYMENT, true)) {
+		if (!in_array($type, \AsisTeam\NRCZ\Enum\Employment::VALID_EMPLOYMENT, true)) {
 			throw new InvalidArgumentException(sprintf('Invalid employment type "%s" given', $type));
 		}
 

@@ -1,20 +1,20 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Tests\Helper;
+namespace AsisTeam\NRCZ\Tests\Helper;
 
-use Contributte\NRCZ\Entity\Address;
-use Contributte\NRCZ\Entity\Commitments;
-use Contributte\NRCZ\Entity\DriverLicense;
-use Contributte\NRCZ\Entity\Employment;
-use Contributte\NRCZ\Entity\IdentityCard;
-use Contributte\NRCZ\Entity\Income;
-use Contributte\NRCZ\Entity\Loan;
-use Contributte\NRCZ\Entity\Ownership;
-use Contributte\NRCZ\Entity\Passport;
-use Contributte\NRCZ\Entity\Person;
-use Contributte\NRCZ\Enum\Education;
-use Contributte\NRCZ\Enum\Employment as EmploymentEnum;
-use Contributte\NRCZ\Enum\MaritalStatus;
+use AsisTeam\NRCZ\Entity\Address;
+use AsisTeam\NRCZ\Entity\Commitments;
+use AsisTeam\NRCZ\Entity\DriverLicense;
+use AsisTeam\NRCZ\Entity\Employment;
+use AsisTeam\NRCZ\Entity\IdentityCard;
+use AsisTeam\NRCZ\Entity\Income;
+use AsisTeam\NRCZ\Entity\Loan;
+use AsisTeam\NRCZ\Entity\Ownership;
+use AsisTeam\NRCZ\Entity\Passport;
+use AsisTeam\NRCZ\Entity\Person;
+use AsisTeam\NRCZ\Enum\Education;
+use AsisTeam\NRCZ\Enum\Employment as EmploymentEnum;
+use AsisTeam\NRCZ\Enum\MaritalStatus;
 use DateTimeImmutable;
 
 final class PersonCreator

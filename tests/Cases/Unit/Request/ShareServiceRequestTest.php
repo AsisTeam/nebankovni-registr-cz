@@ -1,10 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Tests\Cases\Unit\Request;
+namespace AsisTeam\NRCZ\Tests\Cases\Unit\Request;
 
-use Contributte\NRCZ\Entity\Loan;
-use Contributte\NRCZ\Enum\LoanStatus;
-use Contributte\NRCZ\Request\ShareRequest;
+use AsisTeam\NRCZ\Entity\Loan;
+use AsisTeam\NRCZ\Enum\LoanStatus;
+use AsisTeam\NRCZ\Request\ShareRequest;
 use Generator;
 use Tester\Assert;
 use Tester\TestCase;

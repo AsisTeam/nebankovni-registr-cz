@@ -1,15 +1,15 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Tests\Cases\Integration\Client;
+namespace AsisTeam\NRCZ\Tests\Cases\Integration\Client;
 
-use Contributte\NRCZ\Client\LustrationClientFactory;
-use Contributte\NRCZ\Client\PreScoringClientFactory;
-use Contributte\NRCZ\Client\ShareServiceClientFactory;
-use Contributte\NRCZ\Entity\Loan;
-use Contributte\NRCZ\Enum\LoanStatus;
-use Contributte\NRCZ\Result\Lustration\Certificate;
-use Contributte\NRCZ\Result\Lustration\ResultEnum;
-use Contributte\NRCZ\Tests\Helper\PersonCreator;
+use AsisTeam\NRCZ\Client\LustrationClientFactory;
+use AsisTeam\NRCZ\Client\PreScoringClientFactory;
+use AsisTeam\NRCZ\Client\ShareServiceClientFactory;
+use AsisTeam\NRCZ\Entity\Loan;
+use AsisTeam\NRCZ\Enum\LoanStatus;
+use AsisTeam\NRCZ\Result\Lustration\Certificate;
+use AsisTeam\NRCZ\Result\Lustration\ResultEnum;
+use AsisTeam\NRCZ\Tests\Helper\PersonCreator;
 use DateTimeImmutable;
 use Tester\Assert;
 use Tester\Environment;

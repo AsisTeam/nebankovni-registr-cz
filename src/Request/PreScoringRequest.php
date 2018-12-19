@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Request;
+namespace AsisTeam\NRCZ\Request;
 
-use Contributte\NRCZ\Entity\Person;
+use AsisTeam\NRCZ\Entity\Person;
 
 final class PreScoringRequest
 {

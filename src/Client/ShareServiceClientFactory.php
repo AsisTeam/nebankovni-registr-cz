@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Client;
+namespace AsisTeam\NRCZ\Client;
 
 use SoapClient;
 

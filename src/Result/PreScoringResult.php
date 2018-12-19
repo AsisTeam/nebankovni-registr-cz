@@ -1,11 +1,11 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Result;
+namespace AsisTeam\NRCZ\Result;
 
-use Contributte\NRCZ\Enum\PreScoringReason;
-use Contributte\NRCZ\Exception\Logical\UnknownReasonException;
-use Contributte\NRCZ\Exception\Runtime\ResponseException;
-use Contributte\NRCZ\Result\Validator\ResultValidator;
+use AsisTeam\NRCZ\Enum\PreScoringReason;
+use AsisTeam\NRCZ\Exception\Logical\UnknownReasonException;
+use AsisTeam\NRCZ\Exception\Runtime\ResponseException;
+use AsisTeam\NRCZ\Result\Validator\ResultValidator;
 
 final class PreScoringResult
 {

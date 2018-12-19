@@ -1,11 +1,11 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Tests\Cases\Unit\Request;
+namespace AsisTeam\NRCZ\Tests\Cases\Unit\Request;
 
-use Contributte\NRCZ\Entity\IdentityCard;
-use Contributte\NRCZ\Entity\Person;
-use Contributte\NRCZ\Request\LustrationRequest;
-use Contributte\NRCZ\Tests\Helper\PersonCreator;
+use AsisTeam\NRCZ\Entity\IdentityCard;
+use AsisTeam\NRCZ\Entity\Person;
+use AsisTeam\NRCZ\Request\LustrationRequest;
+use AsisTeam\NRCZ\Tests\Helper\PersonCreator;
 use DateTimeImmutable;
 use Generator;
 use Tester\Assert;

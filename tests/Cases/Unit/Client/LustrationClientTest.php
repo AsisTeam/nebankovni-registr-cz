@@ -1,11 +1,11 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Tests\Cases\Unit\Client;
+namespace AsisTeam\NRCZ\Tests\Cases\Unit\Client;
 
-use Contributte\NRCZ\Client\LustrationClient;
-use Contributte\NRCZ\Result\Lustration\Certificate;
-use Contributte\NRCZ\Result\Lustration\ResultEnum;
-use Contributte\NRCZ\Tests\Helper\PersonCreator;
+use AsisTeam\NRCZ\Client\LustrationClient;
+use AsisTeam\NRCZ\Result\Lustration\Certificate;
+use AsisTeam\NRCZ\Result\Lustration\ResultEnum;
+use AsisTeam\NRCZ\Tests\Helper\PersonCreator;
 use Tester\Assert;
 use Tester\TestCase;
 
@@ -28,7 +28,7 @@ class LustrationClientTest extends TestCase
 	}
 
 	/**
-	 * @throws Contributte\NRCZ\Exception\Runtime\ServiceNotAllowedException
+	 * @throws AsisTeam\NRCZ\Exception\Runtime\ServiceNotAllowedException
 	 */
 	public function testPreScoreResultError(): void
 	{

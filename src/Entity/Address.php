@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Entity;
+namespace AsisTeam\NRCZ\Entity;
 
 final class Address
 {

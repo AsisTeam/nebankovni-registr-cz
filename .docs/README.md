@@ -26,8 +26,8 @@ You may add more personal details for better results.
 ### Usage
 
 ```php
-use Contributte\NRCZ\Client\PreScoringClientFactory;
-use Contributte\NRCZ\Entity\Person;
+use AsisTeam\NRCZ\Client\PreScoringClientFactory;
+use AsisTeam\NRCZ\Entity\Person;
 
 $client = (new PreScoringClientFactory('clientId'))->create();
 $res = $client->preScore(new Person('605223/1234', 'Žofinka', 'Čížková'));
@@ -49,8 +49,8 @@ You may add more personal details for better results. Please see `Person` entity
 ### Usage
 
 ```php
-use Contributte\NRCZ\Client\LustrationClientFactory;
-use Contributte\NRCZ\Entity\Person;
+use AsisTeam\NRCZ\Client\LustrationClientFactory;
+use AsisTeam\NRCZ\Entity\Person;
 
 $client = (new LustrationClientFactory('clientId'))->create();
 $res = $client->lust(new Person('605223/1234', 'Žofinka', 'Čížková'));
@@ -74,8 +74,8 @@ Service returns `LustrationResult` with current data.
 ### Usage
 
 ```php
-use Contributte\NRCZ\Client\LustrationClientFactory;
-use Contributte\NRCZ\Entity\Person;
+use AsisTeam\NRCZ\Client\LustrationClientFactory;
+use AsisTeam\NRCZ\Entity\Person;
 
 $client = (new ShareServiceClientFactory('clientId'))->create();
 $res = $client->share(new Person('605223/1234', 'Žofinka', 'Čížková'));

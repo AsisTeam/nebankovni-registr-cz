@@ -24,12 +24,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Contributte\\NRCZ\\": "src"
+      "AsisTeam\\NRCZ\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Contributte\\NRCZ\\Tests\\": "tests"
+      "AsisTeam\\NRCZ\\Tests\\": "tests"
     }
   },
   "minimum-stability": "dev",

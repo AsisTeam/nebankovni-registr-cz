@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Exception\Runtime;
+namespace AsisTeam\NRCZ\Exception\Runtime;
 
 use RuntimeException;
 

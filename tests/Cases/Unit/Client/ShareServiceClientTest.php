@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Tests\Cases\Unit\Client;
+namespace AsisTeam\NRCZ\Tests\Cases\Unit\Client;
 
-use Contributte\NRCZ\Client\ShareServiceClient;
-use Contributte\NRCZ\Entity\Loan;
-use Contributte\NRCZ\Enum\LoanStatus;
-use Contributte\NRCZ\Result\Lustration\Certificate;
-use Contributte\NRCZ\Result\Lustration\ResultEnum;
+use AsisTeam\NRCZ\Client\ShareServiceClient;
+use AsisTeam\NRCZ\Entity\Loan;
+use AsisTeam\NRCZ\Enum\LoanStatus;
+use AsisTeam\NRCZ\Result\Lustration\Certificate;
+use AsisTeam\NRCZ\Result\Lustration\ResultEnum;
 use DateTimeImmutable;
 use Tester\Assert;
 use Tester\TestCase;
@@ -40,7 +40,7 @@ class ShareServiceClientTest extends TestCase
 
 
 	/**
-	 * @throws Contributte\NRCZ\Exception\Runtime\ServiceNotAllowedException
+	 * @throws AsisTeam\NRCZ\Exception\Runtime\ServiceNotAllowedException
 	 */
 	public function testShareResultError(): void
 	{

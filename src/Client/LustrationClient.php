@@ -1,13 +1,13 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\Client;
+namespace AsisTeam\NRCZ\Client;
 
-use Contributte\NRCZ\Entity\Person;
-use Contributte\NRCZ\Exception\Logical\InvalidArgumentException;
-use Contributte\NRCZ\Exception\Runtime\RequestException;
-use Contributte\NRCZ\Exception\Runtime\ResponseException;
-use Contributte\NRCZ\Request\LustrationRequest;
-use Contributte\NRCZ\Result\LustrationResult;
+use AsisTeam\NRCZ\Entity\Person;
+use AsisTeam\NRCZ\Exception\Logical\InvalidArgumentException;
+use AsisTeam\NRCZ\Exception\Runtime\RequestException;
+use AsisTeam\NRCZ\Exception\Runtime\ResponseException;
+use AsisTeam\NRCZ\Request\LustrationRequest;
+use AsisTeam\NRCZ\Result\LustrationResult;
 use SoapClient;
 
 final class LustrationClient extends AbstractSoapClient
