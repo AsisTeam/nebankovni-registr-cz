@@ -1,10 +1,10 @@
 <?php declare(strict_types = 1);
 
-namespace Contributte\NRCZ\DI;
+namespace AsisTeam\NRCZ\DI;
 
-use Contributte\NRCZ\Client\LustrationClientFactory;
-use Contributte\NRCZ\Client\PreScoringClientFactory;
-use Contributte\NRCZ\Client\ShareServiceClientFactory;
+use AsisTeam\NRCZ\Client\LustrationClientFactory;
+use AsisTeam\NRCZ\Client\PreScoringClientFactory;
+use AsisTeam\NRCZ\Client\ShareServiceClientFactory;
 use Nette\DI\CompilerExtension;
 
 final class NRCZExtension extends CompilerExtension
