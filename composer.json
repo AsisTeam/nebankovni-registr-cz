@@ -1,10 +1,10 @@
 {
-  "name": "contributte/nebankovni-registr-cz",
+  "name": "asisteam/nebankovni-registr-cz",
   "description": "Implemenation of communication with nebankovni-registr.cz API",
   "keywords": ["nebankovni-registr.cz", "API"],
   "type": "library",
   "license": "MIT",
-  "homepage": "https://github.com/contributte/nebankovni-registr-cz",
+  "homepage": "https://github.com/AsisTeam/nebankovni-registr-cz",
   "authors": [
     {
       "name": "Tomas Sedlacek",
