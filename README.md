@@ -2,7 +2,8 @@
 
 ## Credits
 
-The development is sponsored by [Asisteam](https://www.asisteam.cz/).
+The development is under [AsisTeam s.r.o.](https://www.asisteam.cz/).
+Feel free to use and contribute.
 
 <img src="https://www.asisteam.cz/img/logo.svg" width="200" alt="Asisteam" title="Asisteam"/>
 
