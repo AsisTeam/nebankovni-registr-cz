@@ -1,6 +1,6 @@
 # AsisTeam > nebankovni-registr.cz
 
-[![Build Status](https://img.shields.io/travis/AsisTeam/nebankovni-registr-cz.svg?style=flat-square)](https://travis-ci.org/AsisTeam/nebankovni-registr-cz)
+[![Build Status](https://img.shields.io/travis/com/AsisTeam/nebankovni-registr-cz.svg?style=flat-square)](https://travis-ci.com/AsisTeam/nebankovni-registr-cz)
 [![Licence](https://img.shields.io/packagist/l/AsisTeam/nebankovni-registr-cz.svg?style=flat-square)](https://packagist.org/packages/AsisTeam/nebankovni-registr-cz)
 [![Downloads this Month](https://img.shields.io/packagist/dm/AsisTeam/nebankovni-registr-cz.svg?style=flat-square)](https://packagist.org/packages/AsisTeam/nebankovni-registr-cz)
 [![Downloads total](https://img.shields.io/packagist/dt/AsisTeam/nebankovni-registr-cz.svg?style=flat-square)](https://packagist.org/packages/AsisTeam/nebankovni-registr-cz)
