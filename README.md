@@ -1,5 +1,12 @@
 # AsisTeam > nebankovni-registr.cz
 
+[![Build Status](https://img.shields.io/travis/AsisTeam/nebankovni-registr-cz.svg?style=flat-square)](https://travis-ci.org/AsisTeam/nebankovni-registr-cz)
+[![Licence](https://img.shields.io/packagist/l/AsisTeam/nebankovni-registr-cz.svg?style=flat-square)](https://packagist.org/packages/AsisTeam/nebankovni-registr-cz)
+[![Downloads this Month](https://img.shields.io/packagist/dm/AsisTeam/nebankovni-registr-cz.svg?style=flat-square)](https://packagist.org/packages/AsisTeam/nebankovni-registr-cz)
+[![Downloads total](https://img.shields.io/packagist/dt/AsisTeam/nebankovni-registr-cz.svg?style=flat-square)](https://packagist.org/packages/AsisTeam/nebankovni-registr-cz)
+[![Latest stable](https://img.shields.io/packagist/v/AsisTeam/nebankovni-registr-cz.svg?style=flat-square)](https://packagist.org/packages/AsisTeam/nebankovni-registr-cz)
+[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
+
 ## Credits
 
 The development is under [AsisTeam s.r.o.](https://www.asisteam.cz/).
