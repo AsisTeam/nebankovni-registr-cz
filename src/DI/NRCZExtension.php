@@ -7,7 +7,7 @@ use AsisTeam\NRCZ\Client\PreScoringClientFactory;
 use AsisTeam\NRCZ\Client\ShareServiceClientFactory;
 use Nette\DI\CompilerExtension;
 
-final class NRCZExtension extends CompilerExtension
+class NRCZExtension extends CompilerExtension
 {
 
 	/** @var string[] */
