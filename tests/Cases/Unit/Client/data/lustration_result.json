@@ -6,6 +6,45 @@
     "DSTI": "19.9",
     "LTV": "-1"
   },
+  "cee": {
+    "date": "2019-06-19",
+    "last_known": {
+      "data": [
+        {
+          "subjects": {
+            "typ_osoby": "F",
+            "jmeno": "Jan Novák",
+            "datum_narozeni": "1971-01-09",
+            "ic": "",
+            "adresa": "Hradčany, 119 08 Praha 1"
+          },
+          "subject_count": "1",
+          "ex_cislo": "000EX0000/00",
+          "datetime_zalozeni": "2015-11-12",
+          "datetime_zapisu": "0000-00-00",
+          "posledni_uprava": "Nařízení exekuce:12.11.2015"
+        }
+      ]
+    },
+    "historical": {
+      "data": [
+        {
+          "subjects": {
+            "typ_osoby": "F",
+            "jmeno": "Jan Novák",
+            "datum_narozeni": "1971-01-09",
+            "ic": "",
+            "adresa": "Hradčany, 119 08 Praha 1"
+          },
+          "subject_count": "1",
+          "ex_cislo": "000EX0000/00",
+          "datetime_zalozeni": "2010-11-12",
+          "datetime_zapisu": "0000-00-00",
+          "posledni_uprava": "Nařízení exekuce:12.11.2010"
+        }
+      ]
+    }
+  },
   "person": {
     "result": "C"
   },
