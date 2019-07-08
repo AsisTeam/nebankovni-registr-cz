@@ -3,6 +3,7 @@
 namespace AsisTeam\NRCZ\Result;
 
 use AsisTeam\NRCZ\Exception\Logical\InvalidArgumentException;
+use AsisTeam\NRCZ\Result\Lustration\Cee;
 use AsisTeam\NRCZ\Result\Lustration\Certificate;
 use AsisTeam\NRCZ\Result\Lustration\CurrentCredit;
 use AsisTeam\NRCZ\Result\Lustration\Lustration;
@@ -25,6 +26,9 @@ final class LustrationResult
 	/** @var CurrentCredit */
 	private $credit;
 
+	/** @var Cee|null */
+	private $cee;
+
 	/** @var Person|null */
 	private $person;
 
@@ -33,6 +37,7 @@ final class LustrationResult
 		ShareData $shareData,
 		Certificate $certificate,
 		CurrentCredit $credit,
+		?Cee $cee = null,
 		?Person $person = null
 	)
 	{
@@ -40,6 +45,7 @@ final class LustrationResult
 		$this->shareData = $shareData;
 		$this->certificate = $certificate;
 		$this->credit = $credit;
+		$this->cee = $cee;
 		$this->person = $person;
 	}
 
@@ -61,6 +67,11 @@ final class LustrationResult
 	public function getCredit(): CurrentCredit
 	{
 		return $this->credit;
+	}
+
+	public function getCee(): ?Cee
+	{
+		return $this->cee;
 	}
 
 	public function getPerson(): ?Person
@@ -89,6 +100,10 @@ final class LustrationResult
 		if (array_key_exists('person', $data)) {
 			$person = Person::fromArray($data['person']);
 		}
+		$cee = null;
+		if (array_key_exists('cee', $data)) {
+			$cee = Cee::fromArray($data['cee']);
+		}
 		if (!array_key_exists('share_data', $data)) {
 			throw new InvalidArgumentException('Lustration API response "share_data" field missing');
 		}
@@ -104,6 +119,7 @@ final class LustrationResult
 			ShareData::fromArray($data['share_data']),
 			Certificate::fromArray($data['certificate']),
 			CurrentCredit::fromArray($data['current_credit']),
+			$cee,
 			$person
 		);
 	}
