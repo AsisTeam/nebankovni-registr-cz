@@ -25,14 +25,19 @@ final class LustrationClient extends AbstractSoapClient
 		$this->requestPreparer = new LustrationRequest();
 	}
 
-	public function lust(Person $person): LustrationResult
+	public function lust(Person $person, bool $forceActual = false): LustrationResult
 	{
 		try {
 			$data = $this->requestPreparer->prepareData($person);
-			$result = $this->call(self::METHOD, $data);
+			$result = $this->call(self::METHOD, array_merge($data, ['ceex' => $forceActual ? 42 : 43]));
 		} catch (InvalidArgumentException $e) {
 			throw new RequestException($e->getMessage(), $e->getCode(), $e);
 		}
+
+		$tmp = \Tracy\Debugger::$maxDepth;
+		\Tracy\Debugger::$maxDepth = 7;
+		bdump($result, 'RAW');
+		\Tracy\Debugger::$maxDepth = $tmp;
 
 		try {
 			return LustrationResult::fromArray($result);
