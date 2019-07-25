@@ -34,11 +34,6 @@ final class LustrationClient extends AbstractSoapClient
 			throw new RequestException($e->getMessage(), $e->getCode(), $e);
 		}
 
-		$tmp = \Tracy\Debugger::$maxDepth;
-		\Tracy\Debugger::$maxDepth = 7;
-		bdump($result, 'RAW');
-		\Tracy\Debugger::$maxDepth = $tmp;
-
 		try {
 			return LustrationResult::fromArray($result);
 		} catch (InvalidArgumentException $e) {
